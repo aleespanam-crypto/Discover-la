@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discover LA – Student Travel Guide</title>
+<style>
+  :root{
+    --primary:#2A9DF4;    /* Sky Blue */
+    --secondary:#FFD54F;  /* Sunset Yellow */
+    --bg:#FFF9E6;         /* Light Sand */
+    --text:#212121;       /* Dark Charcoal */
+    --muted:#9E9E9E;      /* Light Gray */
+    --accent:#2E7D32;     /* Palm Green */
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--text); background:var(--bg); line-height:1.5;
+  }
+  a{color:var(--primary); text-decoration:none}
+  header{
+    position:sticky; top:0; z-index:1000; background:#fff; border-bottom:2px solid #0001;
+  }
+  .nav{
+    max-width:1100px; margin:0 auto; display:flex; gap:16px; align-items:center; padding:10px 16px;
+  }
+  .brand{display:flex; align-items:center; gap:8px; font-weight:700}
+  .brand .logo{
+    width:32px; height:32px; display:inline-block; background:conic-gradient(var(--secondary),var(--primary));
+    border-radius:6px;
+  }
+  .nav a{padding:6px 10px; border-radius:6px}
+  .nav a:hover{background:var(--secondary)}
+  .menu{margin-left:auto; display:flex; gap:8px; flex-wrap:wrap}
+  .hero{
+    background:linear-gradient(180deg, #e8f5ff 0%, #ffffff 100%);
+    border-bottom:2px solid #0001;
+  }
+  .hero-inner{max-width:1100px; margin:0 auto; padding:48px 16px; display:grid; gap:16px;
+    grid-template-columns: 1.2fr 1fr; align-items:center;
+  }
+  @media (max-width:900px){ .hero-inner{grid-template-columns:1fr} .menu{display:none} }
+  h1,h2{line-height:1.2; margin:0 0 8px}
+  h1{font-size:2.2rem}
+  h2{font-size:1.6rem; margin-top:32px}
+  .tag{display:inline-block; padding:6px 10px; border-radius:999px; background:var(--primary); color:#fff; font-weight:600}
+  .cta{display:inline-block; margin-top:12px; padding:10px 14px; border-radius:8px; background:var(--accent); color:#fff; font-weight:700}
+  .wrap{max-width:1100px; margin:0 auto; padding:24px 16px}
+  section{scroll-margin-top:80px}
+  .grid-2{display:grid; gap:16px; grid-template-columns:1fr 1fr}
+  .grid-3{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+  .card{background:#fff; border:1px solid #0002; border-radius:12px; padding:16px}
+  .chip{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; background:#fff; border:1px solid #0002; border-radius:999px}
+  .icon{width:18px; height:18px; display:inline-block; vertical-align:middle}
+  .landmarks{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  table{width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden}
+  th,td{padding:12px; border-bottom:1px solid #0001; text-align:left}
+  th{background:#f7fbff}
+  details{background:#fff; border:1px solid #0002; border-radius:12px; padding:12px; margin:8px 0}
+  footer{margin-top:32px; border-top:2px solid #0001; background:#fff}
+  .small{color:var(--muted); font-size:.95rem}
+  .map-embed{aspect-ratio:16/9; width:100%; border:0; border-radius:12px}
+  .imgph{
+    width:100%; aspect-ratio:16/10; display:block; border-radius:12px; 
+    background:linear-gradient(135deg, #d7ebff, #fff0c2);
+    border:1px solid #0002;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <span class="brand"><span class="logo" aria-hidden="true"></span> Discover LA</span>
+    <div class="menu">
+      <a href="#location">Location</a>
+      <a href="#history">History</a>
+      <a href="#food">Gastronomy</a>
+      <a href="#activities">Activities</a>
+      <a href="#holidays">Holidays</a>
+      <a href="#weather">Weather</a>
+      <a href="#culture">Culture</a>
+      <a href="#landmarks">Landmarks</a>
+      <a href="#routes">Itineraries</a>
+      <a href="#hotels">Hotels</a>
+      <a href="#sevilla">Seville → LA</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="tag">Student Travel Guide</span>
+      <h1>Discover Los Angeles</h1>
+      <p>Explore geography, history, food, activities, weather, culture, landmarks, sample itineraries, and how to travel from Seville. Built to paste into Google Sites or use standalone.</p>
+      <a class="cta" href="#location">Start the tour</a>
+    </div>
+    <div>
+      <div class="imgph" aria-label="LA skyline placeholder"></div>
+      <p class="small">Tip: Replace placeholders with your own photos or school‑approved images.</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="location">
+    <h2>1) Geographic Location</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p>Los Angeles sits in <strong>Southern California</strong>, on the <strong>west coast of the United States</strong>. It stretches from the <em>Pacific Ocean</em> inland toward the <em>San Gabriel Mountains</em> and is part of Los Angeles County.</p>
+        <ul>
+          <li>West Coast of the USA</li>
+          <li>Pacific shoreline + mountain ranges</li>
+          <li>Second largest U.S. city</li>
+        </ul>
+      </div>
+      <div class="card">
+        <iframe class="map-embed" loading="lazy"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424144.24503643075!2d-118.74139234318016!3d34.02073049582708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7c9c09a6e3b%3A0x4a3aaf6b0f5b8f3!2sLos%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000">
+        </iframe>
+        <p class="small">If embedding is blocked in your environment, add a screenshot of the map instead.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="history">
+    <h2>2) History</h2>
+    <div class="grid-2">
+      <div class="card">
+        <ul>
+          <li><strong>1781</strong> — “El Pueblo de Nuestra Señora la Reina de los Ángeles” founded by Spanish settlers.</li>
+          <li><strong>1848</strong> — Became part of the United States.</li>
+          <li><strong>Early 1900s</strong> — Hollywood film industry boom.</li>
+          <li><strong>1984</strong> — Hosted the Summer Olympics.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="imgph" aria-label="Historic LA photo placeholder"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="food">
+    <h2>3) Gastronomy</h2>
+    <div class="grid-3">
+      <div class="card"><div class="imgph"></div><p><strong>Mexican & Latin</strong>: tacos, burritos, tamales.</p></div>
+      <div class="card"><div class="imgph"></div><p><strong>Asian</strong>: Korean BBQ, Japanese sushi, Thai noodles.</p></div>
+      <div class="card"><div class="imgph"></div><p><strong>Fusion</strong>: creative food trucks (Korean–Mexican).</p></div>
+    </div>
+    <p class="small">Iconic: In‑N‑Out Burger. Street food culture and markets are part of daily life.</p>
+  </section>
+
+  <section id="activities">
+    <h2>4) Activities</h2>
+    <div class="grid-4 grid-2">
+      <div class="card"><p class="chip">🏖️ Beaches</p><p>Santa Monica, Venice, Malibu.</p></div>
+      <div class="card"><p class="chip">🛍️ Shopping</p><p>Rodeo Drive, The Grove, Melrose.</p></div>
+      <div class="card"><p class="chip">🎢 Theme Parks</p><p>Disneyland (Anaheim), Universal Studios.</p></div>
+      <div class="card"><p class="chip">🎶 Nightlife</p><p>Concerts and clubs in Hollywood & Downtown.</p></div>
+    </div>
+  </section>
+
+  <section id="holidays">
+    <h2>5) National Holidays</h2>
+    <div class="grid-2">
+      <div class="card">
+        <ul>
+          <li><strong>July 4th</strong>: Fireworks at Santa Monica, Marina del Rey.</li>
+          <li><strong>Thanksgiving</strong>: Parades and family meals.</li>
+          <li><strong>Christmas</strong>: Hollywood Christmas Parade, lights across the city.</li>
+          <li><strong>Also</strong>: Halloween, Memorial Day, Labor Day.</li>
+        </ul>
+      </div>
+      <div class="card"><div class="imgph" aria-label="Holiday photo placeholder"></div></div>
+    </div>
+  </section>
+
+  <section id="weather">
+    <h2>6) Weather & Packing</h2>
+    <div class="grid-3">
+      <div class="card"><p><strong>Summer</strong> (Jun–Sep): 28–35 °C, sunny.</p></div>
+      <div class="card"><p><strong>Winter</strong> (Dec–Feb): Mild with some rain.</p></div>
+      <div class="card"><p><strong>Spring/Fall</strong>: Comfortable, cooler nights.</p></div>
+    </div>
+    <p class="small">Pack sunglasses, sunscreen, light clothes, a hat, and a light jacket for evenings.</p>
+  </section>
+
+  <section id="culture">
+    <h2>7) Cultural Aspects</h2>
+    <div class="grid-2">
+      <div class="card">
+        <ul>
+          <li><strong>Cinema</strong>: Hollywood, Walk of Fame, studio tours.</li>
+          <li><strong>Music</strong>: Hollywood Bowl, venues for pop, rock, hip‑hop, jazz.</li>
+          <li><strong>Art</strong>: Getty Center, LACMA, street murals.</li>
+          <li><strong>Sports</strong>: Lakers, Clippers, Dodgers, Rams, Chargers.</li>
+        </ul>
+      </div>
+      <div class="card"><div class="imgph" aria-label="Cultural photo placeholder"></div></div>
+    </div>
+  </section>
+
+  <section id="landmarks">
+    <h2>8) Monuments & Landmarks</h2>
+    <div class="landmarks">
+      <div class="card"><div class="imgph"></div><p><strong>Hollywood Sign</strong> — Iconic hillside symbol.</p></div>
+      <div class="card"><div class="imgph"></div><p><strong>Griffith Observatory</strong> — City and night‑sky views.</p></div>
+      <div class="card"><div class="imgph"></div><p><strong>Getty Center</strong> — Art, gardens, architecture.</p></div>
+      <div class="card"><div class="imgph"></div><p><strong>Walt Disney Concert Hall</strong> — Modern design.</p></div>
+      <div class="card"><div class="imgph"></div><p><strong>Crypto.com Arena</strong> — Sports and concerts.</p></div>
+      <div class="card"><div class="imgph"></div><p><strong>Walk of Fame & TCL Chinese Theatre</strong>.</p></div>
+    </div>
+  </section>
+
+  <section id="routes">
+    <h2>9) Tourist Routes</h2>
+    <details open class="card">
+      <summary><strong>1‑Day</strong></summary>
+      <p>Hollywood Blvd → Griffith Observatory → Santa Monica Pier → Venice Beach walk.</p>
+    </details>
+    <details class="card">
+      <summary><strong>3‑Day</strong></summary>
+      <ol>
+        <li>Hollywood + Griffith Observatory</li>
+        <li>Universal Studios + Beverly Hills + The Grove</li>
+        <li>Downtown LA + Getty Center + Malibu sunset</li>
+      </ol>
+    </details>
+    <details class="card">
+      <summary><strong>1‑Week</strong></summary>
+      <ul>
+        <li>All of the 3‑Day plan</li>
+        <li>Day trip: Disneyland</li>
+        <li>Day trip: San Diego</li>
+        <li>Neighborhoods: Silver Lake, Echo Park, Pasadena</li>
+        <li>Hikes: Runyon Canyon, Griffith Park</li>
+      </ul>
+    </details>
+  </section>
+
+  <section id="hotels">
+    <h2>10) Hotels</h2>
+    <table>
+      <thead><tr><th>Tier</th><th>Example Area</th><th>Approx. price / night (USD)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Budget</strong></td><td>Hollywood or outskirts</td><td>$40–80</td></tr>
+        <tr><td><strong>Mid‑range</strong></td><td>Mid‑Wilshire or Westwood</td><td>$120–200</td></tr>
+        <tr><td><strong>Luxury</strong></td><td>Beverly Hills / Downtown / Beachfront</td><td>$400+</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="sevilla">
+    <h2>11) Traveling Routes from Seville to Los Angeles</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Main Route (fastest)</h3>
+        <ol>
+          <li>Seville → Madrid (plane ~1 h or train ~2.5 h)</li>
+          <li>Madrid → Los Angeles (direct flight ~12 h)</li>
+        </ol>
+        <p><strong>Total:</strong> ~14–15 h including transfers.</p>
+        <h3>Alternate via Europe</h3>
+        <p>Seville → Paris or London (~2–3 h) → long‑haul to LA (~11 h). Total ~15–17 h.</p>
+      </div>
+      <div class="card">
+        <h3>Estimated Round‑Trip Prices</h3>
+        <ul>
+          <li>Economy: €550–€800</li>
+          <li>Premium Economy: €1,200–€1,500</li>
+          <li>Business: €2,500+</li>
+        </ul>
+        <p class="small">Time zone: LA is 9 hours behind Seville.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>12) Contact – Dream Travels Agency (Imaginary)</h2>
+    <div class="card">
+      <p><strong>Dream Travels Agency</strong><br>
+      ✉️ <a href="mailto:info@dreamtravels.com">info@dreamtravels.com</a> &nbsp; | &nbsp; ☎️ +34 600 123 456<br>
+      📍 Seville, Spain</p>
+      <p class="small">Tip: In Google Sites, insert a Google Form with Name, Email, and Message.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p class="small">© School Project — Discover LA. Colors: Primary #2A9DF4, Secondary #FFD54F, Background #FFF9E6, Text #212121, Accent #2E7D32.</p>
+</footer>
+
+</body>
+</html>
